@@ -18,6 +18,8 @@ Step into adventure as the Brave Knight vs. The Dumb Dragon. Watch out for the D
 ## about the app
 
 https://github.com/CamdynMardis/Exterminate-or-be-Extermianted-miniature-octo/wiki/Game-Wireframe
+https://github.com/CamdynMardis/Exterminate-or-be-Extermianted-miniature-octo/issues/1
+
 - a `tree` of your directory structure 
 - a list of tech & tools 
   - e.g., vsCode (live server, todo, prettier), HTML (emmet), CSS (normalize, bs5 & bs icons), js (jQ, jQui), GitHub (repo, readme/markdwon, wiki, issues, GitHub pages)...others? 
