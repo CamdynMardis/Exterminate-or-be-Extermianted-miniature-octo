@@ -17,8 +17,8 @@ Step into adventure as the Brave Knight vs. The Dumb Dragon. Watch out for the D
 
 ## about the app
 
-https://github.com/CamdynMardis/Exterminate-or-be-Extermianted-miniature-octo/wiki/Game-Wireframe
-https://github.com/CamdynMardis/Exterminate-or-be-Extermianted-miniature-octo/issues/1
+- [Game Wireframe](https://github.com/CamdynMardis/Exterminate-or-be-Extermianted-miniature-octo/wiki/Game-Wireframe)
+- [Game Ideas and Planning](https://github.com/CamdynMardis/Exterminate-or-be-Extermianted-miniature-octo/issues/1)
 
 - a `tree` of your directory structure 
 - a list of tech & tools 
