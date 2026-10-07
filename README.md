@@ -1,4 +1,4 @@
-# Exterminate-or-be-Extermianted-miniature-octo
+# Exterminate-or-be-Extermianted
 Find hidden pests before your searches run out-or be exterminated!
 
 ## authorship
@@ -17,9 +17,7 @@ Step into adventure as the Brave Knight vs. The Dumb Dragon. Watch out for the D
 
 ## about the app
 
-### each of these as lvl-3 headings...
-
-- links to wiki/wireframe & issue/game ideas
+https://github.com/CamdynMardis/Exterminate-or-be-Extermianted-miniature-octo/wiki/Game-Wireframe
 - a `tree` of your directory structure 
 - a list of tech & tools 
   - e.g., vsCode (live server, todo, prettier), HTML (emmet), CSS (normalize, bs5 & bs icons), js (jQ, jQui), GitHub (repo, readme/markdwon, wiki, issues, GitHub pages)...others? 
