@@ -1,0 +1,148 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 25px 15px;
+  background-color: #eeeeee;
+  color: #222222;
+}
+
+.container {
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.box {
+  background-color: white;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 28px;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 22px;
+}
+
+input {
+  padding: 8px;
+  margin: 5px;
+  border: 1px solid #999999;
+  border-radius: 4px;
+}
+
+button {
+  padding: 9px 15px;
+  margin: 5px;
+  background-color: #355e3b;
+  color: white;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #26452b;
+}
+
+.counters {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.counters p {
+  background-color: #eeeeee;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  padding: 10px 15px;
+  margin: 0;
+}
+
+.board-container {
+  overflow-x: auto;
+  padding: 5px;
+}
+
+#game-board {
+  display: flex;
+  gap: 15px;
+  padding: 25px;
+  border: 2px solid #76664d;
+  border-radius: 5px;
+  background-color: #c4b395;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.hiding-spot {
+  position: relative;
+  width: 100px;
+  height: 120px;
+  flex-shrink: 0;
+}
+
+.item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border: 2px solid #444444;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+  z-index: 1;
+}
+
+.item:active {
+  cursor: grabbing;
+}
+
+.bug {
+  position: absolute;
+  top: 35px;
+  left: 30px;
+  font-size: 35px;
+}
+
+#message {
+  font-weight: bold;
+  min-height: 24px;
+}
+
+#leaderboard {
+  max-width: 350px;
+  margin: 15px auto;
+  padding-left: 30px;
+  text-align: left;
+}
+
+#leaderboard li {
+  padding: 10px;
+  margin-bottom: 8px;
+  background-color: #eeeeee;
+  border-radius: 4px;
+}
+
+footer a {
+  color: #355e3b;
+  margin: 0 8px;
+}
