@@ -170,9 +170,6 @@ Both pages passed the Nu HTML Checker with no errors or warnings.
 | Concept | 95 | 100 | 96 | 90 |
 | Full Game | 80 | 100 | 96 | 91 |
 
-- [Concept Lighthouse Screenshot](docs/testing/concept-lighthouse.png)
-- [Full-Game Lighthouse Screenshot](docs/testing/full-game-lighthouse.png)
-
 These scores describe the recorded test runs. Lighthouse scores can change between runs.
 
 The concept report included a browser error from the SmarterProctoring Chrome extension. The full-game report identified large image downloads as an area for improvement.
