@@ -185,9 +185,9 @@ An accessibility score of 100 means the automated checks passed for the tested p
 
 I tested both published games and the navigation between them. I also checked player names, leaderboard results, winning, losing, and retrying.
 
-## Future Improvements — Sprint 99
+## Future Improvements - Sprint 99
 
-The following improvements are planned for future development:
+The [sprint99 milestone](https://github.com/CamdynMardis/Exterminate-or-be-Extermianted-miniature-octo/milestone/1) contains three open issues for future improvements:
 
 1. **Randomize pest locations**
    - Change hiding spots between rounds so players cannot memorize the answers.
@@ -196,9 +196,6 @@ The following improvements are planned for future development:
    - Introduce new environments, objects, and increasingly mutated pests in later levels.
 
 3. **Improve image loading**
-   - Compress images and reduce unnecessary downloads to improve full-game performance.
+   - Compress images and reduce unnecessary downloads to improve performance.
 
-These ideas still need individual GitHub issues assigned to the `sprint99` milestone.
-
-- [Project Issues](https://github.com/CamdynMardis/Exterminate-or-be-Extermianted-miniature-octo/issues)
-- [Project Milestones](https://github.com/CamdynMardis/Exterminate-or-be-Extermianted-miniature-octo/milestones)
+These improvements are planned for future development and have not been implemented.
