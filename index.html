@@ -1,97 +1,290 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exterminate or Be Exterminated</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
-    />
-  </head>
-  <body>
-    <main class="container">
-      <header class="box">
-        <h1>
-          <i class="bi bi-bug-fill" aria-hidden="true"></i>
-          Exterminate or Be Exterminated
-          <i class="bi bi-bug-fill" aria-hidden="true"></i>
-        </h1>
-        <p>Level 1 · Stage 1 | Under the Kitchen Sink</p>
-      </header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      <section class="box">
-        <h2>Player</h2>
+  <title>Exterminate or Be Exterminated — Concept</title>
 
+  <!-- Bootstrap 5 -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+  >
+
+  <!-- Bootstrap Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+  >
+
+  <!-- jQuery UI -->
+  <link
+    rel="stylesheet"
+    href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css"
+  >
+
+  <!-- Your styles load last -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+  <main class="container game-container">
+
+    <header class="box">
+      <h1>
+        <i class="bi bi-bug-fill" aria-hidden="true"></i>
+        Exterminate or Be Exterminated
+        <i class="bi bi-bug-fill" aria-hidden="true"></i>
+      </h1>
+
+      <p>Concept Game · Under the Kitchen Sink</p>
+
+      <nav class="game-nav" aria-label="Game versions">
+        <a href="index.html" aria-current="page">
+          Concept Game
+        </a>
+
+        <a href="pages/full-game/index.html">
+          Full Game
+        </a>
+      </nav>
+    </header>
+
+    <section class="box" aria-labelledby="player-heading">
+      <h2 id="player-heading">Player</h2>
+
+      <form id="player-form">
         <label for="player-name">Your name:</label>
+
         <input
           id="player-name"
           type="text"
+          maxlength="40"
           placeholder="Leave blank for guest"
-        />
-        <button id="start-button">Start Game</button>
-
-        <p id="greeting"></p>
-      </section>
-
-      <section class="box">
-        <h2>Find the Pests</h2>
-        <p>Move objects to find all 3 bugs. You have 4 searches.</p>
-
-        <div class="counters">
-          <p>Searches remaining: <span id="searches">4</span></p>
-          <p>Bugs found: <span id="bugs-found">0</span> / 3</p>
-        </div>
-
-        <div class="board-container">
-          <div id="game-board">
-            <div class="hiding-spot">
-              <span class="bug" hidden>🐜</span>
-              <div class="item" data-bug="true">Cleaner</div>
-            </div>
-
-            <div class="hiding-spot">
-              <div class="item" data-bug="false">Bucket</div>
-            </div>
-
-            <div class="hiding-spot">
-              <span class="bug" hidden>🕷️</span>
-              <div class="item" data-bug="true">Sponge</div>
-            </div>
-
-            <div class="hiding-spot">
-              <div class="item" data-bug="false">Trash Box</div>
-            </div>
-
-            <div class="hiding-spot">
-              <span class="bug" hidden>🪳</span>
-              <div class="item" data-bug="true">Soap</div>
-            </div>
-          </div>
-        </div>
-
-        <p id="message" aria-live="polite">Click Start Game to play.</p>
-        <button id="reset-button">Try Again</button>
-      </section>
-
-      <section class="box">
-        <h2>Leaderboard</h2>
-        <p>Each bug found earns 10 points.</p>
-        <ol id="leaderboard"></ol>
-      </section>
-
-      <footer class="box">
-        <a
-          href="https://github.com/CamdynMardis/Exterminate-or-be-Extermianted-miniature-octo"
+          autocomplete="nickname"
         >
-          Repository
-        </a>
-        |
-        <a href="https://github.com/CamdynMardis">GitHub Profile</a>
-      </footer>
-    </main>
 
-    <script src="assets/js/script.js"></script>
-  </body>
+        <button id="start-button" class="game-button" type="submit">
+          Start Game
+        </button>
+      </form>
+
+      <p id="greeting" aria-live="polite"></p>
+    </section>
+
+    <section class="box" aria-labelledby="board-heading">
+      <h2 id="board-heading">Find the Pests</h2>
+
+      <p>
+        Find all 3 bugs using only 4 searches.
+        Drag an object aside or click it to search.
+      </p>
+
+      <div class="counters">
+        <p>
+          Searches remaining:
+          <span id="searches">4</span>
+        </p>
+
+        <p>
+          Bugs found:
+          <span id="bugs-found">0</span> / 3
+        </p>
+
+        <p>
+          Your score:
+          <span id="score">0</span>
+        </p>
+      </div>
+
+      <div class="board-container">
+        <div id="game-board">
+
+          <div class="hiding-spot">
+            <span class="bug" role="img" aria-label="Ant" hidden>
+              🐜
+            </span>
+
+            <button
+              class="item"
+              type="button"
+              data-bug="true"
+              aria-label="Search behind the cleaner"
+              disabled
+            >
+              Cleaner
+            </button>
+          </div>
+
+          <div class="hiding-spot">
+            <button
+              class="item"
+              type="button"
+              data-bug="false"
+              aria-label="Search behind the bucket"
+              disabled
+            >
+              Bucket
+            </button>
+          </div>
+
+          <div class="hiding-spot">
+            <span class="bug" role="img" aria-label="Spider" hidden>
+              🕷️
+            </span>
+
+            <button
+              class="item"
+              type="button"
+              data-bug="true"
+              aria-label="Search behind the sponge"
+              disabled
+            >
+              Sponge
+            </button>
+          </div>
+
+          <div class="hiding-spot">
+            <button
+              class="item"
+              type="button"
+              data-bug="false"
+              aria-label="Search behind the trash bag box"
+              disabled
+            >
+              Trash Bag Box
+            </button>
+          </div>
+
+          <div class="hiding-spot">
+            <span class="bug" role="img" aria-label="Cockroach" hidden>
+              🪳
+            </span>
+
+            <button
+              class="item"
+              type="button"
+              data-bug="true"
+              aria-label="Search behind the soap"
+              disabled
+            >
+              Soap
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <p id="message" role="status" aria-live="polite">
+        Click Start Game to play.
+      </p>
+
+      <button
+        id="reset-button"
+        class="game-button"
+        type="button"
+        disabled
+      >
+        Play Again
+      </button>
+    </section>
+
+    <section class="box" aria-labelledby="leaderboard-heading">
+      <h2 id="leaderboard-heading">
+        <i class="bi bi-trophy-fill" aria-hidden="true"></i>
+        Leaderboard
+      </h2>
+
+      <p>Each bug found earns 10 points. A perfect score is 30.</p>
+      <p class="small-note">Top 10 scores from this browser-tab session.</p>
+
+      <p id="empty-leaderboard">No scores yet. Play a game!</p>
+
+      <ol id="leaderboard"></ol>
+    </section>
+
+    <footer class="box">
+      <a
+        href="https://github.com/CamdynMardis/Exterminate-or-be-Extermianted-miniature-octo"
+      >
+        Repository
+      </a>
+
+      <span aria-hidden="true">|</span>
+
+      <a href="https://github.com/CamdynMardis">
+        GitHub Profile
+      </a>
+    </footer>
+
+  </main>
+
+  <!-- Bootstrap 5 results modal -->
+
+  <div
+    class="modal fade"
+    id="result-modal"
+    tabindex="-1"
+    aria-labelledby="result-title"
+    aria-describedby="result-message"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h2 class="modal-title fs-4" id="result-title">
+            Game Result
+          </h2>
+
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close results"
+          ></button>
+        </div>
+
+        <div class="modal-body">
+          <p id="result-message"></p>
+
+          <p>
+            Final score:
+            <strong id="result-score">0</strong> points
+          </p>
+        </div>
+
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+
+          <button
+            type="button"
+            class="btn btn-success"
+            id="modal-play-again"
+          >
+            Play Again
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Libraries must load before your script -->
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="assets/js/script.js"></script>
+</body>
 </html>
