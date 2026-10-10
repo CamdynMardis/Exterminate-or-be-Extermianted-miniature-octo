@@ -162,8 +162,6 @@ Both pages passed the Nu HTML Checker with no errors or warnings.
 
 - [Check Concept HTML](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcamdynmardis.github.io%2FExterminate-or-be-Extermianted-miniature-octo%2Findex.html)
 - [Check Full-Game HTML](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcamdynmardis.github.io%2FExterminate-or-be-Extermianted-miniature-octo%2Fpages%2Ffull-game%2Findex.html)
-- [Concept Validation Screenshot](docs/testing/concept-html-validation.png)
-- [Full-Game Validation Screenshot](docs/testing/full-game-html-validation.png)
 
 ### Lighthouse Results
 
