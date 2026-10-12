@@ -12,7 +12,7 @@ Find hidden pests before your searches run out - or be exterminated!
 
 - **Author:** [Camdyn Mardis](https://github.com/CamdynMardis)
 - **Updated:** October 9, 2026
-- **Version:** 1.0 — Level 1
+- **Version:** 1.0 - Level 1
 
 ## User Story
 
